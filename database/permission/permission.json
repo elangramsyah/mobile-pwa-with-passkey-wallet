@@ -1,0 +1,57 @@
+{
+    "permissionsVersion": "1.0",
+    "items": [
+        {
+            "id": "perm-0001",
+            "type": "passkey",
+            "userId": "user-1234",
+            "credentialId": "nH6k3f4G9bQ", 
+            "rpId": "example.com",
+            "origin": "https://example.com",
+            "createdAt": "2025-11-23T12:00:00Z",
+            "lastUsedAt": "2025-11-23T12:15:22Z",
+            "expiresAt": "2026-11-23T12:00:00Z",
+            "revoked": false,
+            "requireUserVerification": true,
+            "transports": ["internal"],
+            "scope": ["authentication"],
+            "allowedActions": ["sign-in"],
+            "description": "Passkey allowed for passwordless sign-in to example.com",
+            "metadata": {
+                "deviceName": "Pixel 7a",
+                "os": "Android 14",
+                "notes": "Primary sign-in credential"
+            }
+        },
+        {
+            "id": "perm-0002",
+            "type": "passkey",
+            "userId": "user-1234",
+            "credentialId": "X9qLp2tZ0A",
+            "rpId": "payments.example.com",
+            "origin": "https://payments.example.com",
+            "createdAt": "2025-11-10T08:30:00Z",
+            "lastUsedAt": "2025-11-22T09:05:10Z",
+            "expiresAt": "2026-05-10T08:30:00Z",
+            "revoked": false,
+            "requireUserVerification": true,
+            "transports": ["internal", "usb"],
+            "scope": ["authentication", "transaction-approval"],
+            "allowedActions": ["sign-in", "approve-transaction"],
+            "consent": {
+                "grantedAt": "2025-11-10T08:31:00Z",
+                "grantedBy": "user-1234",
+                "conditions": {
+                    "maxAmount": 1000,
+                    "currency": "USD",
+                    "merchantWhitelist": ["merchant.example"]
+                }
+            },
+            "description": "Passkey used for approving payments up to $1000",
+            "metadata": {
+                "deviceName": "YubiKey 5C NFC",
+                "notes": "Require UV for transaction approvals"
+            }
+        }
+    ]
+}
